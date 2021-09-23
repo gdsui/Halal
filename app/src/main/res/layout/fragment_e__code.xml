@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.e_code.E_CodeFragment"
+    tools:ignore="NotSibling">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/e_code_detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/rectangle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_toolbar_e_code_detail_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/scan" />
+
+        <ImageView
+            android:id="@+id/image_toolbar_e_code_detail_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/vector" />
+
+        <TextView
+            android:id="@+id/tv_toolbar__detail_e_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="E коды"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_date_e_code"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_margin="@dimen/margine_horizontal"
+        app:cardBackgroundColor="@color/rectangle"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="@id/e_code_detail_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/e_code_detail_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constr_date_e_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/calendar_namaz_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/month_name_tv_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Хижрий"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/calendar_namaz_e_code"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_date_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="22 Мухаррам 1443"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/month_name_tv_e_code"
+                app:layout_constraintTop_toBottomOf="@id/month_name_tv_e_code" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_namaz_time_e_code"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/rectangle"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@id/card_date_e_code"
+        app:layout_constraintTop_toBottomOf="@id/e_code_detail_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constr_namaz_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_namaz_time_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/namaz_time"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_namaz_name_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="9dp"
+                android:text="Бешим"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/image_namaz_time_e_code"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_namaz_time_e_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="13:30"
+                android:textColor="@color/red"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tv_namaz_name_e_code"
+                app:layout_constraintTop_toBottomOf="@id/tv_namaz_name_e_code" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margine_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/margine_horizontal"
+        android:background="@drawable/ic_baseline_search_24"
+        android:hint="Поиск"
+        app:endIconMode="clear_text"
+        app:layout_constraintStart_toStartOf="@id/tv_search_hire"
+        app:layout_constraintTop_toBottomOf="@id/tv_search_hire"
+        app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_search_hire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Бул жерден издениз"
+        app:layout_constraintStart_toStartOf="@id/card_date_e_code"
+        app:layout_constraintTop_toBottomOf="@id/card_date_e_code" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="391dp"
+        android:layout_height="556dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/search_et"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="228dp"
+        tools:listitem="@layout/list_product" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

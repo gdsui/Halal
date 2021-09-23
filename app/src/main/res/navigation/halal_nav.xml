@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/halal_nav"
+    app:startDestination="@id/chooseFragment">
+
+    <fragment
+        android:id="@+id/chooseLanguagesFragment"
+        android:name="com.example.myapplication.ui.choose.ChooseLanguagesFragment"
+        android:label="Язык"
+        tools:layout="@layout/fragment_choose_languages" />
+    <fragment
+        android:id="@+id/chooseCountryFragment"
+        android:name="com.example.myapplication.ui.choose.ChooseCountryFragment"
+        android:label="Страна"
+        tools:layout="@layout/fragment_choose_country" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.ui.main.MainFragment"
+        android:label="Главный"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_e_CodeFragment"
+            app:destination="@id/e_CodeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mainHalalActivity"
+            app:destination="@id/mainHalalActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseFragment"
+        android:name="com.example.myapplication.ui.choose.ChooseFragment"
+        android:label="fragment_choose"
+        tools:layout="@layout/fragment_choose" >
+        <action
+            android:id="@+id/action_chooseFragment_to_chooseLanguagesFragment"
+            app:destination="@id/chooseLanguagesFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_chooseCountryFragment"
+            app:destination="@id/chooseCountryFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_chooseFragment_to_mainHalalActivity"
+            app:destination="@id/mainHalalActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/e_CodeFragment"
+        android:name="com.example.myapplication.ui.e_code.E_CodeFragment"
+        android:label="fragment_e__code"
+        tools:layout="@layout/fragment_e__code" >
+        <action
+            android:id="@+id/action_e_CodeFragment_to_e_code_detail_Fragment"
+            app:destination="@id/e_code_detail_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/e_code_detail_Fragment"
+        android:name="com.example.myapplication.E_code_detail_Fragment"
+        android:label="fragment_e_code_detail_"
+        tools:layout="@layout/fragment_e_code_detail_" />
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.myapplication.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.myapplication.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+    <activity
+        android:id="@+id/mainHalalActivity"
+        android:name="com.example.myapplication.ui.main.MainHalalActivity"
+        android:label="activity_main_halal"
+        tools:layout="@layout/activity_main_halal" />
+</navigation>
